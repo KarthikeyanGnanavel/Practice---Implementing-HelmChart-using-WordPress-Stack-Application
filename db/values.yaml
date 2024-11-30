@@ -1,0 +1,19 @@
+replicaCount: 1
+image:
+  repository: mariadb
+  tag: 10.5
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 3306
+
+db:
+  name: wordpress
+  user: wordpress_user
+  password: wordpress_pass
+  rootPassword: root_pass
+
+persistence:
+  enabled: true
+  size: 1Gi
